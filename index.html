@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Trotter - Premium Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      .animate-marquee {
+        display: flex;
+        animation: marquee 60s linear infinite;
+      }
+      .group:hover .animate-marquee {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-4128px); } /* 12 items * (320px card + 24px gap) */
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              // New Dark Theme Palette
+              'dark-bg': '#0D1117',
+              'dark-surface': '#161B22',
+              'dark-border': '#30363d',
+              'dark-text-primary': '#c9d1d9',
+              'dark-text-secondary': '#8b949e',
+
+              // Accent Colors
+              'brand-accent': '#22d3ee', // A vibrant cyan
+              'brand-accent-dark': '#0891b2',
+
+              // Original colors kept for light theme
+              'brand-blue': '#0077b6',
+              'brand-teal': '#00b4d8',
+            },
+            transitionTimingFunction: {
+              'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+              'in-out-quint': 'cubic-bezier(0.86, 0, 0.07, 1)',
+            },
+             keyframes: {
+                typing: {
+                    "0%": {
+                        width: "0%",
+                        visibility: "hidden"
+                    },
+                    "100%": {
+                        width: "100%"
+                    }
+                },
+                blink: {
+                    "50%": {
+                        borderColor: "transparent"
+                    },
+                    "100%": {
+                        borderColor: "white"
+                    }
+                }
+            },
+            animation: {
+                typing: "typing 2s steps(20) infinite alternate, blink .7s infinite"
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100 dark:bg-dark-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
